@@ -39,3 +39,4 @@ yarn-error.log*
 
 .prettierrc
 .eslintrc.json
+/yarn.lock
