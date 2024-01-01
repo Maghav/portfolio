@@ -1,18 +1,16 @@
-// import {
-
-// } from "@/images/logos";
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
+import CharchitImg from "./charchit.jpg";
 
 export const RESUME_DATA = {
   name: "Charchit Bansal",
   initials: "CB",
   location: "Pisa, Italy",
   locationLink: "https://www.google.com/maps/place/Pisa",
-  about:
-    "Full Stack Engineer focused on building products with extra attention to detail",
-  summary:
-    "As a Full Stack Engineer, I have successfully taken multiple products from 0 to 1. I lead teams effectively, ensuring an environment where people can do their best work. Currently, I work mostly with TypeScript, React, Node.js, and GraphQL. I have over 8 years of experience in working remotely with companies all around the world.",
-  avatarUrl: "https://avatars.githubusercontent.com/u/47504288?s=400&v=4",
+  about: "Full Stack Developer focused on building products with extra attention to detail",
+  summary: "As a Full Stack Developer, I have successfully taken multiple products from 0 to 1. I have work with teams effectively. Currently, I work mostly with ReactJs and Node.js. I have over 3 years of experience in working  with companies all around the world.",
+  // avatarUrl: CharchitImg || "https://avatars.githubusercontent.com/u/47504288?s=400&v=4",
+  // avatarUrl: CharchitImg,
+  avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocJp_Ah8HcaGgdRGnck3V4YxuANSJ6IBvZgnM1YjNnbgEmM=s83-c-mo",
   personalWebsiteUrl: "https://charchitbansal.com",
   contact: {
     email: "charchit95@gmail.com",
@@ -57,8 +55,7 @@ export const RESUME_DATA = {
       title: "Software Developer",
       start: "Feb 2022",
       end: "Feb 2023",
-      description:
-        "Implemented new features, led squad, worked on improving the way developers ship the code, started migration from Emotion to Tailwind CSS and more. Technologies: React, TypeScript, GraphQL",
+      description: "Redux.js · Team Leadership · Full-Stack Development · Team Management · MERN Stack · Amazon Web Services (AWS)",
     },
     {
       company: "Interview Kickstart",
@@ -156,6 +153,48 @@ export const RESUME_DATA = {
       },
     },
     {
+      title: "Samagra Shiksha",
+      techStack: [
+        "PHP",
+        "MySQL",
+        "AJAX",
+        "jQuery",
+        "AWS",
+      ],
+      description: "Initiative by Department of Education, Govt. of NCT of Delhi, India",
+      link: {
+        label: "Samagra Shiksha"
+      },
+    },
+    {
+      title: "SOSE",
+      techStack: [
+        "ReactJs",
+        "Redux",
+        "NodeJs",
+        "Cloudflare",
+        "AWS"
+      ],
+      description: "School of Specialized Excellence, Delhi Board of School Education, Directorate of Education, GNCT Delhi, India",
+      link: {
+        label: "SOSE",
+        href: "https://www.edudel.nic.in/sose",
+      },
+    },
+    {
+      title: "NewsMag",
+      techStack: [
+        "ReactJS",
+        "News.org",
+        "Cloudflare",
+      ],
+      description: "Platform to get latest news of multiple countries and categories.",
+      link: {
+        label: "News App",
+        href: "https://news.charchitbansal.biz/",
+      },
+    },
+    {
       title: "My Drive",
       techStack: [
         "ReactJs",
@@ -182,19 +221,6 @@ export const RESUME_DATA = {
       link: {
         label: "My GPT",
         href: "https://chatgpt.charchitbansal.biz/",
-      },
-    },
-    {
-      title: "NewsMag",
-      techStack: [
-        "ReactJS",
-        "News.org",
-        "Cloudflare",
-      ],
-      description: "Platform to get latest news of multiple countries and categories.",
-      link: {
-        label: "News App",
-        href: "https://news.charchitbansal.biz/",
       },
     },
     {
