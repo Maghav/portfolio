@@ -8,6 +8,7 @@ import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
+import { AttachmentCard } from "@/components/attachment-card";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
@@ -194,6 +195,19 @@ export default function Page() {
                   tags={project.techStack}
                   link={"link" in project ? project.link.href : undefined}
                 />
+              );
+            })}
+          </div>
+        </Section>
+        <Section>
+          <h2 className="text-xl font-bold">Attachments</h2>
+          <div className="flex flex-wrap gap-1">
+            {RESUME_DATA.attachments.map((attachment) => {
+              return (
+                <AttachmentCard
+                  key={attachment.title} 
+                  title={attachment.title} 
+                  link={attachment.link.href}/>
               );
             })}
           </div>

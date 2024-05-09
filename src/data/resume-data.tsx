@@ -120,18 +120,18 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "ONL9.CLUB",
+      title: "The Khbri",
       techStack: [
         "PHP",
         "MySQL",
-        "AJAX",
-        "jQuery",
-        "AWS",
+        "WordPress",
+        "Elementor",
+        "CPanel",
       ],
-      description: "Platform for all online services",
+      description: "News portal for global newspaper",
       link: {
-        label: "ONl9 Club",
-        href: "https://onl9.club/",
+        label: "The Khbri",
+        href: "https://khbri.com/",
       },
     },
     {
@@ -149,4 +149,21 @@ export const RESUME_DATA = {
       },
     },
   ],
+  attachments: [
+    {
+      title: "Resume",
+      link:{
+        label: "Resume",
+        href: "https://drive.google.com/file/d/1kQn1u9VZvL4W4h7QbH-7lOy9wC6s5B2P/view?usp=sharing",
+      },
+
+    },
+    {
+      title: "Unitec Transcript",
+      link:{
+        label: "Unitec Transcript",
+        href: "https://www.icloud.com/iclouddrive/0e4E0dIiFTZUgB0wQW7IV7FSA#SSR_TSRPT",
+      }
+    }
+  ]
 } as const;
