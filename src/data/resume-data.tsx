@@ -120,7 +120,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "The Khbri",
+      title: "The Khbri (under progress)",
       techStack: [
         "PHP",
         "MySQL",
@@ -135,7 +135,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "ONL9 Toolkit",
+      title: "ONL9 Toolkit 9 (under progress)",
       techStack: [
         "Next.js",
         "PostgresSQL",
