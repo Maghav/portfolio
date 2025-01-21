@@ -1,19 +1,18 @@
 import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
-import CharchitImg from "./charchit.jpg";
 import { FacebookIcon } from "lucide-react";
 
 export const RESUME_DATA = {
-  name: "Maghav",
+  name: "Maghav Ahuja",
   initials: "MA",
   location: "Auckland, New Zealand",
   locationLink: "https://www.google.com/maps/place/Auckland",
-  about: "Full Stack Developer focused on building products with extra attention to detail",
-  summary: "As a Full Stack Developer, I have successfully taken multiple products from 0 to 1. Currently, I work mostly with ReactJs and Next.js. I have knowledge of working on Data Analysis and Machine Learning from my Masters degree.",
+  about: "A Graduate in Data Science and Machine Learning",
+  summary: "I have learned various techniques to analyse data, visualise it and then use it for prediction using Machine Learning algorithms.",
   // avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocJp_Ah8HcaGgdRGnck3V4YxuANSJ6IBvZgnM1YjNnbgEmM=s83-c-mo",
   personalWebsiteUrl: "https://onl9.club",
   contact: {
     email: "maghavahuja01@gmail.com",
-    tel: "+64 0228079079",
+    tel: "+64 228079079",
     social: [
       {
         name: "GitHub",
@@ -49,12 +48,12 @@ export const RESUME_DATA = {
   work: [
     {
       company: "Woolworths New Zealand",
-      link: "https://www.countdown.co.nz",
+      link: "https://www.woolworths.co.nz",
       badges: [],
       title: "Fresh Food Assistant",
       start: "March 2023",
-      end: "Present",
-      description: "Night filling · Delicatessen · Seafood · Produce · Grocery · Checkouts · Team Leadership · Team Work",
+      end: "December 2024",
+      description: "Student Part Time Job",
     },
     {
       company: "Hackveda Limited",
@@ -62,7 +61,7 @@ export const RESUME_DATA = {
       badges: ["Remote"],
       title: "Machine Learning Intern",
       start: "March 2023",
-      end: "Present",
+      end: "July 2024",
       description: "Learned Django, and Machine Learning Algorithm Implementations, Analysis using Pandas and Matplotlib",
     },
   ],
@@ -105,6 +104,46 @@ export const RESUME_DATA = {
     "TypeScript",
     "HTML",
     "CSS",
+  ],
+
+  fcc_da_projects: [
+    {
+      title: "Mean Variance Standard Deviation Calculator",
+      techStack: [
+        "Python",
+        "Numpy",
+      ],
+      description: "FreeCodeCamp 1st Data Analyst Project",
+      link: {
+        label: "Mean Variance Standard Deviation Calculator",
+        href: "http://github.com/Maghav/fcc-sd-calculator/",
+      },
+    },
+    {
+      title: "Demographic Data Analysis",
+      techStack: [
+        "Matplotlib",
+        "Pandas",
+      ],
+      description: "FreeCodeCamp 2nd Data Analysis Project",
+      link: {
+        label: "Demographic Data Analysis",
+        href: "https://github.com/Maghav/demographic-da",
+      },
+    }, 
+    {
+      title: "Medical Data Visualiser",
+      techStack: [
+        "Pandas",
+        "Seaborn",
+        "Matplotlib",
+      ],
+      description: "FreeCodeCamp 3rd Project",
+      link: {
+        label: "Medical Data Visualiser",
+        href: "https://github.com/Maghav/medical-data-visualiser",
+      },
+    },
   ],
 
   projects: [

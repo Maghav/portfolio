@@ -99,6 +99,7 @@ export default function Page() {
             {RESUME_DATA.summary}
           </p>
         </Section>
+        <hr/>
         <Section>
           <h2 className="text-xl font-bold">Work Experience</h2>
           {RESUME_DATA.work.map((work) => {
@@ -139,6 +140,7 @@ export default function Page() {
             );
           })}
         </Section>
+        <hr/>
         <Section>
           <h2 className="text-xl font-bold">Education</h2>
           {RESUME_DATA.education.map((education) => {
@@ -159,6 +161,7 @@ export default function Page() {
             );
           })}
         </Section>
+        <hr/>
         <Section>
           <h2 className="text-xl font-bold">Skills</h2>
           <div className="flex flex-wrap gap-1">
@@ -183,6 +186,24 @@ export default function Page() {
             })}
           </div>
         </Section>
+        <hr />
+        <Section>
+          <h2 className="text-xl font-bold">FreeCodeCamp Data Analysis Projects</h2>
+          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+            {RESUME_DATA.fcc_da_projects.map((project) => {
+              return (
+                <ProjectCard
+                  key={project.title}
+                  title={project.title}
+                  description={project.description}
+                  tags={project.techStack}
+                  link={"link" in project ? project.link.href : undefined}
+                />
+              );
+            })}
+          </div>
+        </Section>
+        <hr/>
         <Section>
           <h2 className="text-xl font-bold">Projects</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
@@ -199,6 +220,7 @@ export default function Page() {
             })}
           </div>
         </Section>
+        <hr/>
         <Section>
           <h2 className="text-xl font-bold">Attachments</h2>
           <div className="flex flex-wrap gap-1">
