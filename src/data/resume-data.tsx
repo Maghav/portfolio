@@ -47,6 +47,15 @@ export const RESUME_DATA = {
   ],
   work: [
     {
+      company: "Datacom",
+      link: "https://www.datacom.com/",
+      badges: ["Auckland, New Zealand"],
+      title: "Intern",
+      start: "April 2025",
+      end: "Present",
+      description: "Learning React.js, Next.js, Postgres SQL, and Azure Cloud",
+    },
+    {
       company: "Woolworths New Zealand",
       link: "https://www.woolworths.co.nz",
       badges: [],
@@ -54,15 +63,6 @@ export const RESUME_DATA = {
       start: "March 2023",
       end: "December 2024",
       description: "Student Part Time Job",
-    },
-    {
-      company: "Hackveda Limited",
-      link: "https://hackveda.in/",
-      badges: ["Remote"],
-      title: "Machine Learning Intern",
-      start: "March 2023",
-      end: "July 2024",
-      description: "Learned Django, and Machine Learning Algorithm Implementations, Analysis using Pandas and Matplotlib",
     },
   ],
   skills: [
