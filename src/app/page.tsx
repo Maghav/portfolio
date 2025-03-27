@@ -94,14 +94,14 @@ export default function Page() {
           </Avatar>
         </div>
         <Section>
-          <h2 className="text-xl font-bold">About</h2>
+          <h2 className="text-xl font-bold">ABOUT</h2>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
         <hr/>
         <Section>
-          <h2 className="text-xl font-bold">Work Experience</h2>
+          <h2 className="text-xl font-bold">WORK EXPERIENCE</h2>
           {RESUME_DATA.work.map((work) => {
             return (
               <Card key={work.company}>
@@ -142,7 +142,7 @@ export default function Page() {
         </Section>
         <hr/>
         <Section>
-          <h2 className="text-xl font-bold">Education</h2>
+          <h2 className="text-xl font-bold">EDUCATION</h2>
           {RESUME_DATA.education.map((education) => {
             return (
               <Card key={education.school}>
@@ -163,7 +163,7 @@ export default function Page() {
         </Section>
         <hr/>
         <Section>
-          <h2 className="text-xl font-bold">Skills</h2>
+          <h2 className="text-xl font-bold">SKILLS</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -171,7 +171,7 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">Frameworks & Tools</h2>
+          <h2 className="text-xl font-bold">FRAMEWORKS, LIBRARIES AND TOOLS</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.frameworks_libraries_tools.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -179,7 +179,7 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold bg">Programming Languages</h2>
+          <h2 className="text-xl font-bold bg">PROGRAMMING LANGUAGES</h2>
           <div className="flex flex-wrap gap-1 col-span-8">
             {RESUME_DATA.languages.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -188,7 +188,7 @@ export default function Page() {
         </Section>
         <hr />
         <Section>
-          <h2 className="text-xl font-bold">FreeCodeCamp Data Analysis Projects</h2>
+          <h2 className="text-xl font-bold">FreeCodeCamp PROJECTS</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.fcc_da_projects.map((project) => {
               return (
@@ -205,7 +205,7 @@ export default function Page() {
         </Section>
         <hr/>
         <Section>
-          <h2 className="text-xl font-bold">Projects</h2>
+          <h2 className="text-xl font-bold">OTHER PROJECTS</h2>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
@@ -222,7 +222,7 @@ export default function Page() {
         </Section>
         <hr/>
         <Section>
-          <h2 className="text-xl font-bold">Attachments</h2>
+          <h2 className="text-xl font-bold">ATTACHMENTS</h2>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.attachments.map((attachment) => {
               return (

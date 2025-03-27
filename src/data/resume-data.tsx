@@ -2,7 +2,7 @@ import { GitHubIcon, LinkedInIcon, XIcon } from "@/components/icons";
 import { FacebookIcon } from "lucide-react";
 
 export const RESUME_DATA = {
-  name: "Maghav Ahuja",
+  name: "MAGHAV AHUJA",
   initials: "MA",
   location: "Auckland, New Zealand",
   locationLink: "https://www.google.com/maps/place/Auckland",
