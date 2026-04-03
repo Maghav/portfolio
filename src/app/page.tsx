@@ -4,30 +4,38 @@ import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon, MailIcon, PhoneIcon } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { GlobeIcon } from "lucide-react";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
 import { AttachmentCard } from "@/components/attachment-card";
+import { ContactButtons } from "@/components/contact-buttons";
 
 export const metadata: Metadata = {
   title: `${RESUME_DATA.name} | ${RESUME_DATA.about}`,
   description: RESUME_DATA.summary,
 };
 
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="inline-block text-xl font-extrabold tracking-tight bg-neo-yellow border-2 border-neo-black px-2 py-0.5 shadow-neo-sm uppercase">
+      {children}
+    </h2>
+  );
+}
+
 export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-white print:space-y-6">
-        <div className="flex items-center justify-between">
+      <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-6">
+        <div className="flex items-center justify-between border-2 border-neo-black p-4 shadow-neo bg-white">
           <div className="flex-1 space-y-1.5">
-            <h1 className="text-2xl font-bold">{RESUME_DATA.name}</h1>
-            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground">
+            <h1 className="text-3xl font-extrabold tracking-tight">{RESUME_DATA.name}</h1>
+            <p className="max-w-md text-pretty font-mono text-sm text-muted-foreground font-medium">
               {RESUME_DATA.about}
             </p>
             <p className="max-w-md items-center text-pretty font-mono text-xs text-muted-foreground">
               <a
-                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline"
+                className="inline-flex gap-x-1.5 align-baseline leading-none hover:underline font-bold"
                 href={RESUME_DATA.locationLink}
                 target="_blank"
               >
@@ -35,45 +43,11 @@ export default function Page() {
                 {RESUME_DATA.location}
               </a>
             </p>
-            <div className="flex gap-x-1 pt-1 font-mono text-sm text-muted-foreground print:hidden">
-              {RESUME_DATA.contact.email ? (
-                <Button
-                  className="h-8 w-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={`mailto:${RESUME_DATA.contact.email}`}>
-                    <MailIcon className="h-4 w-4" />
-                  </a>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.tel ? (
-                <Button
-                  className="h-8 w-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={`tel:${RESUME_DATA.contact.tel}`}>
-                    <PhoneIcon className="h-4 w-4" />
-                  </a>
-                </Button>
-              ) : null}
-              {RESUME_DATA.contact.social.map((social) => (
-                <Button
-                  key={social.name}
-                  className="h-8 w-8"
-                  variant="outline"
-                  size="icon"
-                  asChild
-                >
-                  <a href={social.url}>
-                    <social.icon className="h-4 w-4" />
-                  </a>
-                </Button>
-              ))}
-            </div>
+            <ContactButtons
+              email={RESUME_DATA.contact.email}
+              tel={RESUME_DATA.contact.tel}
+              social={RESUME_DATA.contact.social.map(({ name, url }) => ({ name, url }))}
+            />
             <div className="hidden flex-col gap-x-1 font-mono text-sm text-muted-foreground print:flex">
               {RESUME_DATA.contact.email ? (
                 <a href={`mailto:${RESUME_DATA.contact.email}`}>
@@ -88,26 +62,26 @@ export default function Page() {
             </div>
           </div>
 
-          <Avatar className="h-28 w-28">
+          <Avatar className="h-28 w-28 border-2 border-neo-black shadow-neo-sm">
             {/* <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} /> */}
-            <AvatarFallback>{RESUME_DATA.initials}</AvatarFallback>
+            <AvatarFallback className="text-2xl font-extrabold bg-neo-yellow text-neo-black">{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
         <Section>
-          <h2 className="text-xl font-bold">ABOUT</h2>
+          <SectionHeading>About</SectionHeading>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
-        <hr/>
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">WORK EXPERIENCE</h2>
+          <SectionHeading>Work Experience</SectionHeading>
           {RESUME_DATA.work.map((work) => {
             return (
-              <Card key={work.company}>
+              <Card key={work.company} className="p-3">
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-semibold leading-none">
+                    <h3 className="inline-flex items-center justify-center gap-x-1 font-extrabold leading-none">
                       <a className="hover:underline" href={work.link}>
                         {work.company}
                       </a>
@@ -124,12 +98,12 @@ export default function Page() {
                         ))}
                       </span>
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm tabular-nums font-bold text-muted-foreground">
                       {work.start} - {work.end}
                     </div>
                   </div>
 
-                  <h4 className="font-mono text-sm leading-none">
+                  <h4 className="font-mono text-sm font-semibold leading-none">
                     {work.title}
                   </h4>
                 </CardHeader>
@@ -140,30 +114,30 @@ export default function Page() {
             );
           })}
         </Section>
-        <hr/>
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">EDUCATION</h2>
+          <SectionHeading>Education</SectionHeading>
           {RESUME_DATA.education.map((education) => {
             return (
-              <Card key={education.school}>
+              <Card key={education.school} className="p-3">
                 <CardHeader>
                   <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-semibold leading-none">
+                    <h3 className="font-extrabold leading-none">
                       {education.school}
                     </h3>
-                    <div className="text-sm tabular-nums text-gray-500">
+                    <div className="text-sm tabular-nums font-bold text-muted-foreground">
                       {education.start} - {education.end}
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent className="mt-2">{education.degree}</CardContent>
+                <CardContent className="mt-2 font-medium">{education.degree}</CardContent>
               </Card>
             );
           })}
         </Section>
-        <hr/>
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">SKILLS</h2>
+          <SectionHeading>Skills</SectionHeading>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.skills.map((skill) => {
               return <Badge key={skill}>{skill}</Badge>;
@@ -171,24 +145,24 @@ export default function Page() {
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold">FRAMEWORKS, LIBRARIES AND TOOLS</h2>
+          <SectionHeading>Frameworks, Libraries & Tools</SectionHeading>
           <div className="flex flex-wrap gap-1">
             {RESUME_DATA.frameworks_libraries_tools.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
+              return <Badge key={skill} variant="outline">{skill}</Badge>;
             })}
           </div>
         </Section>
         <Section>
-          <h2 className="text-xl font-bold bg">PROGRAMMING LANGUAGES</h2>
+          <SectionHeading>Programming Languages</SectionHeading>
           <div className="flex flex-wrap gap-1 col-span-8">
             {RESUME_DATA.languages.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
+              return <Badge key={skill} variant="secondary">{skill}</Badge>;
             })}
           </div>
         </Section>
-        <hr />
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">FreeCodeCamp PROJECTS</h2>
+          <SectionHeading>FreeCodeCamp Projects</SectionHeading>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.fcc_da_projects.map((project) => {
               return (
@@ -203,9 +177,9 @@ export default function Page() {
             })}
           </div>
         </Section>
-        <hr/>
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">OTHER PROJECTS</h2>
+          <SectionHeading>Other Projects</SectionHeading>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => {
               return (
@@ -220,15 +194,15 @@ export default function Page() {
             })}
           </div>
         </Section>
-        <hr/>
+        <hr className="border-2 border-neo-black"/>
         <Section>
-          <h2 className="text-xl font-bold">ATTACHMENTS</h2>
-          <div className="flex flex-wrap gap-1">
+          <SectionHeading>Attachments</SectionHeading>
+          <div className="flex flex-wrap gap-3">
             {RESUME_DATA.attachments.map((attachment) => {
               return (
                 <AttachmentCard
-                  key={attachment.title} 
-                  title={attachment.title} 
+                  key={attachment.title}
+                  title={attachment.title}
                   link={attachment.link.href}/>
               );
             })}

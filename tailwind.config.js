@@ -51,11 +51,22 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "neo-yellow": "#FFD60A",
+        "neo-coral": "#FF6B6B",
+        "neo-blue": "#4CC9F0",
+        "neo-green": "#06D6A0",
+        "neo-black": "#0D0D0D",
       },
       borderRadius: {
-        lg: "var(--radius)",
-        md: "calc(var(--radius) - 2px)",
-        sm: "calc(var(--radius) - 4px)",
+        lg: "0px",
+        md: "0px",
+        sm: "0px",
+      },
+      boxShadow: {
+        neo: "4px 4px 0px 0px #0D0D0D",
+        "neo-sm": "3px 3px 0px 0px #0D0D0D",
+        "neo-lg": "6px 6px 0px 0px #0D0D0D",
+        "neo-yellow": "4px 4px 0px 0px #FFD60A",
       },
       keyframes: {
         "accordion-down": {
