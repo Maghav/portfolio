@@ -31,8 +31,8 @@ function SkillGroup({ title, items, variant = "default" }: {
   variant?: BadgeVariant;
 }) {
   return (
-    <div className="space-y-1.5">
-      <h3 className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">{title}</h3>
+    <div className="space-y-2">
+      <h3 className="text-sm font-extrabold uppercase tracking-wide text-foreground border-b-2 border-neo-black pb-1">{title}</h3>
       <div className="flex flex-wrap gap-1">
         {items.map((item) => (
           <Badge key={item} variant={variant}>{item}</Badge>
@@ -101,9 +101,9 @@ export default function Page() {
           <SectionHeading>Work Experience</SectionHeading>
           {RESUME_DATA.work.map((work) => (
             <Card key={work.company} className="overflow-hidden">
-              {/* Yellow header strip */}
-              <div className="bg-neo-yellow border-b-2 border-neo-black px-4 py-3">
-                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+              {/* Blue header strip */}
+              <div className="bg-neo-blue border-b-2 border-neo-black px-4 py-3">
+                <div className="flex items-center justify-between gap-x-4">
                   <h3 className="font-extrabold text-base leading-tight">
                     <a className="hover:underline" href={work.link}>
                       {work.company}
@@ -116,7 +116,7 @@ export default function Page() {
                 {work.badges.length > 0 && (
                   <div className="flex flex-wrap gap-1 mt-1.5">
                     {work.badges.map((badge) => (
-                      <Badge variant="outline" className="text-[10px] py-0 bg-white/60" key={badge}>
+                      <Badge variant="default" className="text-[10px] py-0" key={badge}>
                         {badge}
                       </Badge>
                     ))}
