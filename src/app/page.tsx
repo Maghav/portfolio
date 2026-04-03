@@ -43,7 +43,7 @@ function SkillGroup({ title, items, variant = "default" }: {
 export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
-      <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-6">
+      <section className="mx-auto w-full max-w-2xl space-y-8 pb-20 bg-background print:space-y-6">
 
         {/* Header */}
         <div className="flex items-center justify-between border-2 border-neo-black p-4 shadow-neo bg-white">
@@ -94,20 +94,18 @@ export default function Page() {
           </p>
         </Section>
 
-        <hr className="border-2 border-neo-black"/>
-
         {/* Work Experience */}
         <Section>
           <SectionHeading>Work Experience</SectionHeading>
           {RESUME_DATA.work.map((work) => (
             <Card key={work.company} className="p-3">
               <CardHeader>
-                <div className="flex items-center justify-between gap-x-2 text-base">
-                  <h3 className="inline-flex items-center justify-center gap-x-1 font-extrabold leading-none">
+                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-center sm:justify-between sm:gap-x-2 text-base">
+                  <h3 className="inline-flex items-center flex-wrap gap-x-1 font-extrabold leading-none">
                     <a className="hover:underline" href={work.link}>
                       {work.company}
                     </a>
-                    <span className="inline-flex gap-x-1">
+                    <span className="inline-flex flex-wrap gap-1">
                       {work.badges.map((badge) => (
                         <Badge variant="secondary" className="align-middle text-xs" key={badge}>
                           {badge}
@@ -130,15 +128,13 @@ export default function Page() {
           ))}
         </Section>
 
-        <hr className="border-2 border-neo-black"/>
-
         {/* Education */}
         <Section>
           <SectionHeading>Education</SectionHeading>
           {RESUME_DATA.education.map((education) => (
             <Card key={education.school} className="p-3">
               <CardHeader>
-                <div className="flex items-center justify-between gap-x-2 text-base">
+                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-center sm:justify-between sm:gap-x-2 text-base">
                   <h3 className="font-extrabold leading-none">
                     {education.school}
                   </h3>
@@ -151,8 +147,6 @@ export default function Page() {
             </Card>
           ))}
         </Section>
-
-        <hr className="border-2 border-neo-black"/>
 
         {/* Skills */}
         <Section>
@@ -169,8 +163,6 @@ export default function Page() {
           </div>
         </Section>
 
-        <hr className="border-2 border-neo-black"/>
-
         {/* Certifications */}
         <Section>
           <SectionHeading>Certifications</SectionHeading>
@@ -185,12 +177,10 @@ export default function Page() {
           </div>
         </Section>
 
-        <hr className="border-2 border-neo-black"/>
-
         {/* FreeCodeCamp Projects */}
         <Section>
           <SectionHeading>FreeCodeCamp Projects</SectionHeading>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.fcc_da_projects.map((project) => (
               <ProjectCard
                 key={project.title}
@@ -203,12 +193,10 @@ export default function Page() {
           </div>
         </Section>
 
-        <hr className="border-2 border-neo-black"/>
-
         {/* Other Projects */}
         <Section>
           <SectionHeading>Other Projects</SectionHeading>
-          <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => (
               <ProjectCard
                 key={project.title}
@@ -220,8 +208,6 @@ export default function Page() {
             ))}
           </div>
         </Section>
-
-        <hr className="border-2 border-neo-black"/>
 
         {/* Attachments */}
         <Section>
