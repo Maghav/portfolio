@@ -6,8 +6,8 @@ export const RESUME_DATA = {
   initials: "MA",
   location: "Auckland, New Zealand",
   locationLink: "https://www.google.com/maps/place/Auckland",
-  about: "A Graduate in Data Science and Machine Learning",
-  summary: "I have learned various techniques to analyse data, visualise it and then use it for prediction using Machine Learning algorithms.",
+  about: "A Graduate in DevOps, Systems, and Technical Support Engineering",
+  summary: "I'm gaining experience in DevOps, by working with CI/CD, Linux, Docker, K8s, Ansible, Terraform on AWS, Azure and GCP by working on hands on projects. On the way to be a Site Reliability Engineer oneday.",
   // avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocJp_Ah8HcaGgdRGnck3V4YxuANSJ6IBvZgnM1YjNnbgEmM=s83-c-mo",
   personalWebsiteUrl: "https://onl9.club",
   contact: {
@@ -35,8 +35,8 @@ export const RESUME_DATA = {
     {
       school: "Unitec Institute of Technology, Auckland, New Zealand",
       degree: "Masters in Applied Technologies",
-      start: "2023",
-      end: "2024",
+      start: "Feb 2023",
+      end: "July 2024",
     },
     {
       school: "Maharaja Surajmal Institute, New Delhi, India",
@@ -47,63 +47,105 @@ export const RESUME_DATA = {
   ],
   work: [
     {
+      company: "Genoa Engineering",
+      link: "https://www.genoa.com",
+      badges: ["Rodney, Auckland, New Zealand"],
+      title: "Casual System/DevOps Engineer",
+      start: "August 2025",
+      end: "Present",
+      description: "Setting up and supporting on-prem servers, and making best use of cloud services for deployment of projects. The focus of the company remains more on IoT services, though leveraging cloud platforms like Azure and AWS for our jobs helps in achieving goals, I am honoured to be part of the company by providing support to have a hybdrid cloud environment.",
+    },
+    {
+      company: "Mitre10 MEGA",
+      link: "https://www.mitre10.co.nz",
+      badges: ["Albany, Auckland, New Zealand"],
+      title: "Security Team Member",
+      start: "August 2025",
+      end: "Present",
+      description: "Weekend job to be busy during the weekends.",
+    },
+    {
       company: "Datacom",
       link: "https://www.datacom.com/",
       badges: ["Auckland, New Zealand"],
       title: "Intern",
       start: "April 2025",
-      end: "Present",
-      description: "Learning React.js, Next.js, Postgres SQL, and Azure Cloud",
+      end: "September 2025",
+      description: "I joined as a Software engineer, and ended up being a DevOps Engineer. Learned Azure DevOps, .NET and Reactjs project deployments, software development cycle, and Azure Cloud",
     },
     {
       company: "Woolworths New Zealand",
       link: "https://www.woolworths.co.nz",
-      badges: [],
+      badges: ["Auckland, New Zealand"],
       title: "Fresh Food Assistant",
       start: "March 2023",
       end: "December 2024",
       description: "Student Part Time Job",
     },
   ],
-  skills: [
-   "SEO",
-   "Digital Marketing",
-   "Machine Learning",
-   "Data Analysis",
-   "Data Visualization",
-   "Team work",
-   "Problem Solving",
+
+  others: [
+    "Microsoft 365",
+    "NodeJS",
+    "ReactJS",
+    "Next.js",
+    ".NET framework",
+    "PHP Scripts",
+    "MySQL",
+    "PostgresSQL",
+    "SQL Server",
   ],
 
- frameworks_libraries_tools:[
-   "ReactJS",
-   "Next.js",
-   "Selenium",
-   "Scikit-learn",
-   "TensorFlow",
-   "Keras",
-   "Scipy",
-   "NLTK",
-   "PowerBI",
-   "Django",
-   "Tailwind",
-   "Numpy",
-   "Pandas",
-   "OpenCV",,
-   "Docker",
-   "AWS",
-   "Azure",
-   "Git",
-   "REST API",
-   "PostgreSQL",
- ],
+  infraOSCloud: [
+    "NGINX",
+    "Apache",
+    "CentOS/RHEL",
+    "Ubuntu/Debian",
+    "Windows Server 2019, 2022, 2025",
+    "SUSELinux",
+    "Amazon Web Services - AWS",
+    "Microsoft Azure",
+    "Google Cloud - GCP",
+    "Oracle Cloud Infrastructure - OCI",
+  ],
 
-  languages:[
-    "Python",
-    "JavaScript",
-    "TypeScript",
-    "HTML",
-    "CSS",
+  a_iac: [
+    "Terraform",
+    "Ansible",
+    "Bash Scripting",
+    "Python Scripting",
+    "Selenium",
+  ],
+
+  cicd: [
+    "Git",
+    "Jenkins",
+    "Azure DevOps",
+    "GitHub Actions",
+  ],
+
+  container_orchestration: [
+    "Docker",
+    "Kubernetes",
+    "Helm",
+  ],
+
+  monitoring_networking: [
+    "Grafana",
+    "Prometheus",
+    "Elastic Stack - ELK",
+    "Tailscale",
+  ],
+
+  security: [
+    "Microsoft Sentinel",
+    "SSL/TLS",
+    "Reverse Proxy",
+    "Bastion Host - OCI Bastion",
+  ],
+
+  ai: [
+    "OpenClaw",
   ],
 
   fcc_da_projects: [
@@ -130,7 +172,7 @@ export const RESUME_DATA = {
         label: "Demographic Data Analysis",
         href: "https://github.com/Maghav/demographic-da",
       },
-    }, 
+    },
     {
       title: "Medical Data Visualiser",
       techStack: [
@@ -163,7 +205,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "The Khbri (under progress)",
+      title: "Sadservers Tasks",
       techStack: [
         "PHP",
         "MySQL",
@@ -192,21 +234,52 @@ export const RESUME_DATA = {
       },
     },
   ],
+
+  certifications: [
+    {
+      title: "MS-900: Microsoft 365 Fundamentals",
+      link: {
+        label: "MS-900",
+        href: "https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/",
+      },
+    },
+    {
+      title: "CJE: Certified Jenkins Engineer",
+      link: {
+        label: "CJE",
+        href: "https://www.cloudbees.com/cloudbees-university/training-certifications/jenkins",
+      },
+    },
+    {
+      title: "Hashicorp Certified: Terraform Associate",
+      link: {
+        label: "004",
+        href: "https://developer.hashicorp.com/certifications/infrastructure-automations",
+      },
+    },
+    {
+      title: "CKA: Certified Kubernetes Administrator",
+      link: {
+        label: "CKA",
+        href: "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals",
+      },
+    },
+  ],
+
   attachments: [
     {
       title: "Resume",
-      link:{
+      link: {
         label: "Resume",
         href: "https://drive.google.com/file/d/1kQn1u9VZvL4W4h7QbH-7lOy9wC6s5B2P/view?usp=sharing",
       },
-
     },
     {
-      title: "Unitec Transcript",
-      link:{
-        label: "Unitec Transcript",
+      title: "Unitec Letter of Completion",
+      link: {
+        label: "Unitec LOC",
         href: "https://www.icloud.com/iclouddrive/0e4E0dIiFTZUgB0wQW7IV7FSA#SSR_TSRPT",
-      }
-    }
-  ]
+      },
+    },
+  ],
 } as const;

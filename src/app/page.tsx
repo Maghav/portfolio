@@ -1,4 +1,4 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
@@ -23,10 +23,29 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
+function SkillGroup({ title, items, variant = "default" }: {
+  title: string;
+  items: readonly string[];
+  variant?: "default" | "secondary" | "outline";
+}) {
+  return (
+    <div className="space-y-1.5">
+      <h3 className="text-xs font-extrabold uppercase tracking-widest text-muted-foreground">{title}</h3>
+      <div className="flex flex-wrap gap-1">
+        {items.map((item) => (
+          <Badge key={item} variant={variant}>{item}</Badge>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export default function Page() {
   return (
     <main className="container relative mx-auto scroll-my-12 overflow-auto p-4 print:p-12 md:p-16">
       <section className="mx-auto w-full max-w-2xl space-y-8 bg-background print:space-y-6">
+
+        {/* Header */}
         <div className="flex items-center justify-between border-2 border-neo-black p-4 shadow-neo bg-white">
           <div className="flex-1 space-y-1.5">
             <h1 className="text-3xl font-extrabold tracking-tight">{RESUME_DATA.name}</h1>
@@ -63,151 +82,161 @@ export default function Page() {
           </div>
 
           <Avatar className="h-28 w-28 border-2 border-neo-black shadow-neo-sm">
-            {/* <AvatarImage alt={RESUME_DATA.name} src={RESUME_DATA.avatarUrl} /> */}
             <AvatarFallback className="text-2xl font-extrabold bg-neo-yellow text-neo-black">{RESUME_DATA.initials}</AvatarFallback>
           </Avatar>
         </div>
+
+        {/* About */}
         <Section>
           <SectionHeading>About</SectionHeading>
           <p className="text-pretty font-mono text-sm text-muted-foreground">
             {RESUME_DATA.summary}
           </p>
         </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Work Experience */}
         <Section>
           <SectionHeading>Work Experience</SectionHeading>
-          {RESUME_DATA.work.map((work) => {
-            return (
-              <Card key={work.company} className="p-3">
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="inline-flex items-center justify-center gap-x-1 font-extrabold leading-none">
-                      <a className="hover:underline" href={work.link}>
-                        {work.company}
-                      </a>
-
-                      <span className="inline-flex gap-x-1">
-                        {work.badges.map((badge) => (
-                          <Badge
-                            variant="secondary"
-                            className="align-middle text-xs"
-                            key={badge}
-                          >
-                            {badge}
-                          </Badge>
-                        ))}
-                      </span>
-                    </h3>
-                    <div className="text-sm tabular-nums font-bold text-muted-foreground">
-                      {work.start} - {work.end}
-                    </div>
+          {RESUME_DATA.work.map((work) => (
+            <Card key={work.company} className="p-3">
+              <CardHeader>
+                <div className="flex items-center justify-between gap-x-2 text-base">
+                  <h3 className="inline-flex items-center justify-center gap-x-1 font-extrabold leading-none">
+                    <a className="hover:underline" href={work.link}>
+                      {work.company}
+                    </a>
+                    <span className="inline-flex gap-x-1">
+                      {work.badges.map((badge) => (
+                        <Badge variant="secondary" className="align-middle text-xs" key={badge}>
+                          {badge}
+                        </Badge>
+                      ))}
+                    </span>
+                  </h3>
+                  <div className="text-sm tabular-nums font-bold text-muted-foreground shrink-0">
+                    {work.start} - {work.end}
                   </div>
-
-                  <h4 className="font-mono text-sm font-semibold leading-none">
-                    {work.title}
-                  </h4>
-                </CardHeader>
-                <CardContent className="mt-2 text-xs">
-                  {work.description}
-                </CardContent>
-              </Card>
-            );
-          })}
+                </div>
+                <h4 className="font-mono text-sm font-semibold leading-none">
+                  {work.title}
+                </h4>
+              </CardHeader>
+              <CardContent className="mt-2 text-xs">
+                {work.description}
+              </CardContent>
+            </Card>
+          ))}
         </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Education */}
         <Section>
           <SectionHeading>Education</SectionHeading>
-          {RESUME_DATA.education.map((education) => {
-            return (
-              <Card key={education.school} className="p-3">
-                <CardHeader>
-                  <div className="flex items-center justify-between gap-x-2 text-base">
-                    <h3 className="font-extrabold leading-none">
-                      {education.school}
-                    </h3>
-                    <div className="text-sm tabular-nums font-bold text-muted-foreground">
-                      {education.start} - {education.end}
-                    </div>
+          {RESUME_DATA.education.map((education) => (
+            <Card key={education.school} className="p-3">
+              <CardHeader>
+                <div className="flex items-center justify-between gap-x-2 text-base">
+                  <h3 className="font-extrabold leading-none">
+                    {education.school}
+                  </h3>
+                  <div className="text-sm tabular-nums font-bold text-muted-foreground shrink-0">
+                    {education.start} - {education.end}
                   </div>
-                </CardHeader>
-                <CardContent className="mt-2 font-medium">{education.degree}</CardContent>
-              </Card>
-            );
-          })}
+                </div>
+              </CardHeader>
+              <CardContent className="mt-2 font-medium">{education.degree}</CardContent>
+            </Card>
+          ))}
         </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Skills */}
         <Section>
-          <SectionHeading>Skills</SectionHeading>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.skills.map((skill) => {
-              return <Badge key={skill}>{skill}</Badge>;
-            })}
+          <SectionHeading>Skills & Technologies</SectionHeading>
+          <div className="space-y-4">
+            <SkillGroup title="Infrastructure, OS & Cloud" items={RESUME_DATA.infraOSCloud} variant="default" />
+            <SkillGroup title="Automation & IaC" items={RESUME_DATA.a_iac} variant="outline" />
+            <SkillGroup title="CI/CD" items={RESUME_DATA.cicd} variant="secondary" />
+            <SkillGroup title="Containers & Orchestration" items={RESUME_DATA.container_orchestration} variant="default" />
+            <SkillGroup title="Monitoring & Networking" items={RESUME_DATA.monitoring_networking} variant="outline" />
+            <SkillGroup title="Security" items={RESUME_DATA.security} variant="secondary" />
+            <SkillGroup title="AI" items={RESUME_DATA.ai} variant="default" />
+            <SkillGroup title="Other" items={RESUME_DATA.others} variant="outline" />
           </div>
         </Section>
-        <Section>
-          <SectionHeading>Frameworks, Libraries & Tools</SectionHeading>
-          <div className="flex flex-wrap gap-1">
-            {RESUME_DATA.frameworks_libraries_tools.map((skill) => {
-              return <Badge key={skill} variant="outline">{skill}</Badge>;
-            })}
-          </div>
-        </Section>
-        <Section>
-          <SectionHeading>Programming Languages</SectionHeading>
-          <div className="flex flex-wrap gap-1 col-span-8">
-            {RESUME_DATA.languages.map((skill) => {
-              return <Badge key={skill} variant="secondary">{skill}</Badge>;
-            })}
-          </div>
-        </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Certifications */}
+        <Section>
+          <SectionHeading>Certifications</SectionHeading>
+          <div className="flex flex-wrap gap-3">
+            {RESUME_DATA.certifications.map((cert) => (
+              <AttachmentCard
+                key={cert.title}
+                title={cert.title}
+                link={cert.link.href}
+              />
+            ))}
+          </div>
+        </Section>
+
+        <hr className="border-2 border-neo-black"/>
+
+        {/* FreeCodeCamp Projects */}
         <Section>
           <SectionHeading>FreeCodeCamp Projects</SectionHeading>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.fcc_da_projects.map((project) => {
-              return (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.techStack}
-                  link={"link" in project ? project.link.href : undefined}
-                />
-              );
-            })}
+            {RESUME_DATA.fcc_da_projects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                tags={project.techStack}
+                link={"link" in project ? project.link.href : undefined}
+              />
+            ))}
           </div>
         </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Other Projects */}
         <Section>
           <SectionHeading>Other Projects</SectionHeading>
           <div className="-mx-3 grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.projects.map((project) => {
-              return (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={project.description}
-                  tags={project.techStack}
-                  link={"link" in project ? project.link.href : undefined}
-                />
-              );
-            })}
+            {RESUME_DATA.projects.map((project) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                tags={project.techStack}
+                link={"link" in project ? project.link.href : undefined}
+              />
+            ))}
           </div>
         </Section>
+
         <hr className="border-2 border-neo-black"/>
+
+        {/* Attachments */}
         <Section>
           <SectionHeading>Attachments</SectionHeading>
           <div className="flex flex-wrap gap-3">
-            {RESUME_DATA.attachments.map((attachment) => {
-              return (
-                <AttachmentCard
-                  key={attachment.title}
-                  title={attachment.title}
-                  link={attachment.link.href}/>
-              );
-            })}
+            {RESUME_DATA.attachments.map((attachment) => (
+              <AttachmentCard
+                key={attachment.title}
+                title={attachment.title}
+                link={attachment.link.href}
+              />
+            ))}
           </div>
         </Section>
+
       </section>
 
       <CommandMenu
