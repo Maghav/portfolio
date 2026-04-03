@@ -8,16 +8,14 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-neo-yellow text-neo-black",
-        secondary:
-          "bg-neo-blue text-neo-black",
-        destructive:
-          "bg-accent text-white",
-        outline: "bg-transparent text-foreground",
+        default:   "bg-neo-yellow text-neo-black",
+        secondary: "bg-neo-blue text-neo-black",
+        green:     "bg-neo-green text-neo-black",
+        red:       "bg-neo-coral text-white",
+        destructive: "bg-accent text-white",
+        outline:   "bg-transparent text-foreground",
       },
     },
-
     defaultVariants: {
       variant: "default",
     },

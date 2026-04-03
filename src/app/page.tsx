@@ -1,5 +1,5 @@
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
@@ -23,10 +23,12 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
   );
 }
 
+type BadgeVariant = "default" | "secondary" | "green" | "red" | "outline" | "destructive";
+
 function SkillGroup({ title, items, variant = "default" }: {
   title: string;
   items: readonly string[];
-  variant?: "default" | "secondary" | "outline";
+  variant?: BadgeVariant;
 }) {
   return (
     <div className="space-y-1.5">
@@ -98,32 +100,38 @@ export default function Page() {
         <Section>
           <SectionHeading>Work Experience</SectionHeading>
           {RESUME_DATA.work.map((work) => (
-            <Card key={work.company} className="p-3">
-              <CardHeader>
-                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-center sm:justify-between sm:gap-x-2 text-base">
-                  <h3 className="inline-flex items-center flex-wrap gap-x-1 font-extrabold leading-none">
+            <Card key={work.company} className="overflow-hidden">
+              {/* Yellow header strip */}
+              <div className="bg-neo-yellow border-b-2 border-neo-black px-4 py-3">
+                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+                  <h3 className="font-extrabold text-base leading-tight">
                     <a className="hover:underline" href={work.link}>
                       {work.company}
                     </a>
-                    <span className="inline-flex flex-wrap gap-1">
-                      {work.badges.map((badge) => (
-                        <Badge variant="secondary" className="align-middle text-xs" key={badge}>
-                          {badge}
-                        </Badge>
-                      ))}
-                    </span>
                   </h3>
-                  <div className="text-sm tabular-nums font-bold text-muted-foreground shrink-0">
-                    {work.start} - {work.end}
+                  <div className="text-sm font-bold text-neo-black shrink-0 font-mono whitespace-nowrap">
+                    {work.start} – {work.end}
                   </div>
                 </div>
-                <h4 className="font-mono text-sm font-semibold leading-none">
+                {work.badges.length > 0 && (
+                  <div className="flex flex-wrap gap-1 mt-1.5">
+                    {work.badges.map((badge) => (
+                      <Badge variant="outline" className="text-[10px] py-0 bg-white/60" key={badge}>
+                        {badge}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {/* Card body */}
+              <div className="px-4 py-3 space-y-2">
+                <p className="font-mono text-sm font-extrabold text-foreground">
                   {work.title}
-                </h4>
-              </CardHeader>
-              <CardContent className="mt-2 text-xs">
-                {work.description}
-              </CardContent>
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {work.description}
+                </p>
+              </div>
             </Card>
           ))}
         </Section>
@@ -132,18 +140,24 @@ export default function Page() {
         <Section>
           <SectionHeading>Education</SectionHeading>
           {RESUME_DATA.education.map((education) => (
-            <Card key={education.school} className="p-3">
-              <CardHeader>
-                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-center sm:justify-between sm:gap-x-2 text-base">
-                  <h3 className="font-extrabold leading-none">
+            <Card key={education.school} className="overflow-hidden">
+              {/* Yellow header strip */}
+              <div className="bg-neo-yellow border-b-2 border-neo-black px-4 py-3">
+                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+                  <h3 className="font-extrabold text-base leading-tight">
                     {education.school}
                   </h3>
-                  <div className="text-sm tabular-nums font-bold text-muted-foreground shrink-0">
-                    {education.start} - {education.end}
+                  <div className="text-sm font-bold text-neo-black shrink-0 font-mono whitespace-nowrap">
+                    {education.start} – {education.end}
                   </div>
                 </div>
-              </CardHeader>
-              <CardContent className="mt-2 font-medium">{education.degree}</CardContent>
+              </div>
+              {/* Card body */}
+              <div className="px-4 py-3">
+                <p className="font-mono text-sm font-bold text-foreground">
+                  {education.degree}
+                </p>
+              </div>
             </Card>
           ))}
         </Section>
@@ -152,14 +166,14 @@ export default function Page() {
         <Section>
           <SectionHeading>Skills & Technologies</SectionHeading>
           <div className="space-y-4">
-            <SkillGroup title="Infrastructure, OS & Cloud" items={RESUME_DATA.infraOSCloud} variant="default" />
-            <SkillGroup title="Automation & IaC" items={RESUME_DATA.a_iac} variant="outline" />
-            <SkillGroup title="CI/CD" items={RESUME_DATA.cicd} variant="secondary" />
-            <SkillGroup title="Containers & Orchestration" items={RESUME_DATA.container_orchestration} variant="default" />
-            <SkillGroup title="Monitoring & Networking" items={RESUME_DATA.monitoring_networking} variant="outline" />
-            <SkillGroup title="Security" items={RESUME_DATA.security} variant="secondary" />
-            <SkillGroup title="AI" items={RESUME_DATA.ai} variant="default" />
-            <SkillGroup title="Other" items={RESUME_DATA.others} variant="outline" />
+            <SkillGroup title="Infrastructure, OS & Cloud"    items={RESUME_DATA.infraOSCloud}          variant="green"     />
+            <SkillGroup title="Automation & IaC"              items={RESUME_DATA.a_iac}                 variant="red"       />
+            <SkillGroup title="CI/CD"                         items={RESUME_DATA.cicd}                  variant="secondary" />
+            <SkillGroup title="Containers & Orchestration"    items={RESUME_DATA.container_orchestration} variant="green"   />
+            <SkillGroup title="Monitoring & Networking"       items={RESUME_DATA.monitoring_networking} variant="red"       />
+            <SkillGroup title="Security"                      items={RESUME_DATA.security}              variant="secondary" />
+            <SkillGroup title="AI"                            items={RESUME_DATA.ai}                    variant="green"     />
+            <SkillGroup title="Other"                         items={RESUME_DATA.others}                variant="red"       />
           </div>
         </Section>
 
