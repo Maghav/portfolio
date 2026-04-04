@@ -101,15 +101,14 @@ export default function Page() {
           <SectionHeading>Work Experience</SectionHeading>
           {RESUME_DATA.work.map((work) => (
             <Card key={work.company} className="overflow-hidden">
-              {/* Blue header strip */}
-              <div className="bg-neo-blue border-b-2 border-neo-black px-4 py-3">
+              <div className="px-4 pt-3 pb-2 border-b-2 border-neo-black">
                 <div className="flex items-center justify-between gap-x-4">
                   <h3 className="font-extrabold text-base leading-tight">
                     <a className="hover:underline" href={work.link}>
                       {work.company}
                     </a>
                   </h3>
-                  <div className="text-sm font-bold text-neo-black shrink-0 font-mono whitespace-nowrap">
+                  <div className="text-sm font-bold text-muted-foreground shrink-0 font-mono whitespace-nowrap">
                     {work.start} – {work.end}
                   </div>
                 </div>
@@ -123,7 +122,6 @@ export default function Page() {
                   </div>
                 )}
               </div>
-              {/* Card body */}
               <div className="px-4 py-3 space-y-2">
                 <p className="font-mono text-sm font-extrabold text-foreground">
                   {work.title}
@@ -141,18 +139,16 @@ export default function Page() {
           <SectionHeading>Education</SectionHeading>
           {RESUME_DATA.education.map((education) => (
             <Card key={education.school} className="overflow-hidden">
-              {/* Yellow header strip */}
-              <div className="bg-neo-yellow border-b-2 border-neo-black px-4 py-3">
-                <div className="flex flex-col gap-y-1 sm:flex-row sm:items-start sm:justify-between sm:gap-x-4">
+              <div className="px-4 pt-3 pb-2 border-b-2 border-neo-black">
+                <div className="flex items-center justify-between gap-x-4">
                   <h3 className="font-extrabold text-base leading-tight">
                     {education.school}
                   </h3>
-                  <div className="text-sm font-bold text-neo-black shrink-0 font-mono whitespace-nowrap">
+                  <div className="text-sm font-bold text-muted-foreground shrink-0 font-mono whitespace-nowrap">
                     {education.start} – {education.end}
                   </div>
                 </div>
               </div>
-              {/* Card body */}
               <div className="px-4 py-3">
                 <p className="font-mono text-sm font-bold text-foreground">
                   {education.degree}
