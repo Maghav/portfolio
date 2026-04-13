@@ -205,7 +205,54 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "Sadservers Tasks",
+      title: "Learning Physics",
+      techStack: [
+        "CPanel",
+        "Tailwind",
+        "MySQL",
+        "Vibe Coding - Replit",
+        "Next.js",
+      ],
+      description: "A website for my dad.",
+      link: {
+        label: "The Khbri",
+        href: "https://learningphysics.in/",
+      },
+    },
+    {
+      title: "ONL9 Toolkit 9 (under progress)",
+      techStack: [
+        "Next.js",
+        "PostgresSQL",
+        "TailwindCSS",
+        "Vercel",
+      ],
+      description: "Platform for all online tools",
+      link: {
+        label: "Toolkit",
+        href: "https://toolkit.onl9.club/",
+      },
+    },
+  ],
+
+  experience: [
+    {
+      title: "SadServers",
+      techStack: [
+        "ReactJS",
+        "Next.js",
+        "TailwindCSS",
+        "Vercel",
+        "TypeScript",
+      ],
+      description: "A simple portfolio website built using Next.js",
+      link: {
+        label: "Maghav Portfolio",
+        href: "http://maghav.onl9.club/",
+      },
+    },
+    {
+      title: "KodeKloud Engineer",
       techStack: [
         "PHP",
         "MySQL",
@@ -220,7 +267,7 @@ export const RESUME_DATA = {
       },
     },
     {
-      title: "ONL9 Toolkit 9 (under progress)",
+      title: "Labex.io",
       techStack: [
         "Next.js",
         "PostgresSQL",

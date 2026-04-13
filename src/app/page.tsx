@@ -187,6 +187,22 @@ export default function Page() {
           </div>
         </Section>
 
+        {/* Learning/Troubleshooting Experience */}
+        <Section>
+          <SectionHeading>Learning/Troubleshooting Experience</SectionHeading>
+          <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+            {RESUME_DATA.experience.map((experience) => (
+              <ProjectCard
+                key={experience.title}
+                title={experience.title}
+                description={experience.description}
+                tags={experience.techStack}
+                link={"link" in experience ? experience.link.href : undefined}
+              />
+            ))}
+          </div>
+        </Section>
+        
         {/* FreeCodeCamp Projects */}
         <Section>
           <SectionHeading>FreeCodeCamp Projects</SectionHeading>
