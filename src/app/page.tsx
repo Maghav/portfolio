@@ -173,7 +173,7 @@ export default function Page() {
           </div>
         </Section>
 
-        {/* Certifications */}
+        {/* Certifications
         <Section>
           <SectionHeading>Certifications</SectionHeading>
           <div className="flex flex-wrap gap-3">
@@ -185,7 +185,7 @@ export default function Page() {
               />
             ))}
           </div>
-        </Section>
+        </Section> */}
 
         {/* Learning/Troubleshooting Experience */}
         <Section>
@@ -202,26 +202,10 @@ export default function Page() {
             ))}
           </div>
         </Section>
-        
-        {/* FreeCodeCamp Projects */}
-        <Section>
-          <SectionHeading>FreeCodeCamp Projects</SectionHeading>
-          <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
-            {RESUME_DATA.fcc_da_projects.map((project) => (
-              <ProjectCard
-                key={project.title}
-                title={project.title}
-                description={project.description}
-                tags={project.techStack}
-                link={"link" in project ? project.link.href : undefined}
-              />
-            ))}
-          </div>
-        </Section>
 
-        {/* Other Projects */}
+        {/* Projects */}
         <Section>
-          <SectionHeading>Other Projects</SectionHeading>
+          <SectionHeading>Projects</SectionHeading>
           <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.projects.map((project) => (
               <ProjectCard

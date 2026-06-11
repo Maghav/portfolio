@@ -47,13 +47,22 @@ export const RESUME_DATA = {
   ],
   work: [
     {
-      company: "Genoa Engineering",
-      link: "https://www.genoa.com",
-      badges: ["Rodney, Auckland, New Zealand"],
-      title: "Casual System/DevOps Engineer",
-      start: "August 2025",
+      company: "Hyppadrive.ai",
+      link: "https://www.hypadrive.ai",
+      badges: ["Contract, Remote, New Zealand"],
+      title: "DevOps Engineer",
+      start: "June 2026",
       end: "Present",
       description: "Setting up and supporting on-prem servers, and making best use of cloud services for deployment of projects. The focus of the company remains more on IoT services, though leveraging cloud platforms like Azure and AWS for our jobs helps in achieving goals, I am honoured to be part of the company by providing support to have a hybdrid cloud environment.",
+    },
+    {
+      company: "Neurix Limited",
+      link: "https://www.neurix.co.nz",
+      badges: ["Auckland, New Zealand"],
+      title: "Contract System/DevOps Engineer",
+      start: "August 2025",
+      end: "Present",
+      description: "Setting up and supporting on-prem servers, and making best use of cloud services for deployment of projects. The focus of the company remains more on IoT services, though leveraging cloud platforms like Azure and AWS for our jobs helps in achieving goals, I am honoured to be part of the company by providing support to have a hybdrid cloud environment. Worked on migration of infrastructure from Rodney's office to Onehunga office (relocation). Setup all the networks using UniFi, and IoT devices automation using HomeAssistant in the new office. Worked on servers setup including VPN server, NGINX, and web servers for website. Provided technical support and worked on reliability and security to ensure everything stays up from 50% to over 90%. Worked on containerised applications to reduce downtime.",
     },
     {
       company: "Mitre10 MEGA",
@@ -111,6 +120,7 @@ export const RESUME_DATA = {
 
   a_iac: [
     "Terraform",
+    "AWS CloudFront",
     "Ansible",
     "Bash Scripting",
     "Python Scripting",
@@ -133,8 +143,11 @@ export const RESUME_DATA = {
   monitoring_networking: [
     "Grafana",
     "Prometheus",
+    "Zabbix",
     "Elastic Stack - ELK",
     "Tailscale",
+    "OPNsense",
+    "UniFi",
   ],
 
   security: [
@@ -142,50 +155,15 @@ export const RESUME_DATA = {
     "SSL/TLS",
     "Reverse Proxy",
     "Bastion Host - OCI Bastion",
+    "VPN configuration"
   ],
 
   ai: [
     "OpenClaw",
-  ],
-
-  fcc_da_projects: [
-    {
-      title: "Mean Variance Standard Deviation Calculator",
-      techStack: [
-        "Python",
-        "Numpy",
-      ],
-      description: "FreeCodeCamp 1st Data Analyst Project",
-      link: {
-        label: "Mean Variance Standard Deviation Calculator",
-        href: "http://github.com/Maghav/fcc-sd-calculator/",
-      },
-    },
-    {
-      title: "Demographic Data Analysis",
-      techStack: [
-        "Matplotlib",
-        "Pandas",
-      ],
-      description: "FreeCodeCamp 2nd Data Analysis Project",
-      link: {
-        label: "Demographic Data Analysis",
-        href: "https://github.com/Maghav/demographic-da",
-      },
-    },
-    {
-      title: "Medical Data Visualiser",
-      techStack: [
-        "Pandas",
-        "Seaborn",
-        "Matplotlib",
-      ],
-      description: "FreeCodeCamp 3rd Project",
-      link: {
-        label: "Medical Data Visualiser",
-        href: "https://github.com/Maghav/medical-data-visualiser",
-      },
-    },
+    "Hermes Agent",
+    "Ollama",
+    "LM-Studio",
+    "Fine-Tuning"
   ],
 
   projects: [
@@ -215,7 +193,7 @@ export const RESUME_DATA = {
       ],
       description: "A website for my dad.",
       link: {
-        label: "The Khbri",
+        label: "Learning Physics",
         href: "https://learningphysics.in/",
       },
     },
@@ -233,82 +211,68 @@ export const RESUME_DATA = {
         href: "https://toolkit.onl9.club/",
       },
     },
+    {
+      title: "ONL9 Club",
+      techStack: [
+        "XenForo",
+        "WordPress",
+        "OAuth",
+        "APIs",
+      ],
+      description: "Forum for almost every IT service.",
+      link: {
+        label: "Onl9Club",
+        href: "https://onl9.club/",
+      },
+    },
   ],
 
   experience: [
     {
-      title: "SadServers",
+      title: "SadServers Troubleshooting experience",
       techStack: [
-        "ReactJS",
-        "Next.js",
-        "TailwindCSS",
-        "Vercel",
-        "TypeScript",
+        "NGINX, Apache",
+        "Linux Troubleshooting",
+        "SSH, Systemd",
+        "Networking/DNS/ Firewalls",
+        "Cron jobs",
+        "Docker, Kubernetes",
+        "Databases - MySQL, Postgres"
+
       ],
-      description: "A simple portfolio website built using Next.js",
+      description: "Working on troubleshooting different VMs of linux boosting my skillset on Linux, DevOps, and networking concepts.",
       link: {
-        label: "Maghav Portfolio",
-        href: "http://maghav.onl9.club/",
+        label: "Sadservers",
+        href: "https://sadservers.com/",
       },
     },
     {
       title: "KodeKloud Engineer",
       techStack: [
-        "PHP",
-        "MySQL",
-        "WordPress",
-        "Elementor",
-        "CPanel",
+        "Git, Docker, Kubernetes",
+        "CI/CD - Jenkins, Github Actions",
+        "Cloud - Azure, AWS",
+        "Ansible, Terraform",
+        "Linux, NGINX, Apache",
       ],
-      description: "News portal for global newspaper",
+      description: "100 days of DevOps, Cloud, and MLOps",
       link: {
-        label: "The Khbri",
-        href: "https://khbri.com/",
+        label: "kodeKloud Engineer",
+        href: "https://kodekloud.com",
       },
     },
     {
-      title: "Labex.io",
+      title: "Iximuiuz Labs",
       techStack: [
-        "Next.js",
-        "PostgresSQL",
-        "TailwindCSS",
-        "Vercel",
+        "Linux",
+        "Learn Kubernetes the very hard way",
+        "Docker",
+        "Troubleshooting",
       ],
-      description: "Platform for all online tools",
+      description: "Another platform to practice real-world problems on real VMs",
       link: {
-        label: "Toolkit",
-        href: "https://toolkit.onl9.club/",
-      },
-    },
-  ],
-
-  certifications: [
-    {
-      title: "MS-900: Microsoft 365 Fundamentals",
-      link: {
-        label: "MS-900",
-        href: "https://learn.microsoft.com/en-us/credentials/certifications/microsoft-365-fundamentals/",
-      },
-    },
-    {
-      title: "CJE: Certified Jenkins Engineer",
-      link: {
-        label: "CJE",
-        href: "https://www.cloudbees.com/cloudbees-university/training-certifications/jenkins",
-      },
-    },
-    {
-      title: "Hashicorp Certified: Terraform Associate",
-      link: {
-        label: "004",
-        href: "https://developer.hashicorp.com/certifications/infrastructure-automations",
-      },
-    },
-    {
-      title: "CKA: Certified Kubernetes Administrator",
-      link: {
-        label: "CKA",
-        href: "https://learn.microsoft.com/en-us/credentials/certifications/azure-fundamentals",
+        label: "Iximiuz",
+        href: "https://labs.iximiuz.com/",
       },
     },
   ],
@@ -318,14 +282,14 @@ export const RESUME_DATA = {
       title: "Resume",
       link: {
         label: "Resume",
-        href: "https://drive.google.com/file/d/1kQn1u9VZvL4W4h7QbH-7lOy9wC6s5B2P/view?usp=sharing",
+        href: "/",
       },
     },
     {
       title: "Unitec Letter of Completion",
       link: {
         label: "Unitec LOC",
-        href: "https://www.icloud.com/iclouddrive/0e4E0dIiFTZUgB0wQW7IV7FSA#SSR_TSRPT",
+        href: "/",
       },
     },
   ],
