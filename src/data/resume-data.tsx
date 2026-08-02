@@ -46,16 +46,7 @@ export const RESUME_DATA = {
     }
   ],
   work: [
-    {
-      company: "Hyppadrive.ai",
-      link: "https://www.hypadrive.ai",
-      badges: ["Contract, Remote, New Zealand"],
-      title: "DevOps Engineer",
-      start: "June 2026",
-      end: "Present",
-      description: "Setting up and supporting on-prem servers, and making best use of cloud services for deployment of projects. The focus of the company remains more on IoT services, though leveraging cloud platforms like Azure and AWS for our jobs helps in achieving goals, I am honoured to be part of the company by providing support to have a hybdrid cloud environment.",
-    },
-    {
+        {
       company: "Neurix Limited",
       link: "https://www.neurix.co.nz",
       badges: ["Auckland, New Zealand"],
@@ -116,6 +107,7 @@ export const RESUME_DATA = {
     "Microsoft Azure",
     "Google Cloud - GCP",
     "Oracle Cloud Infrastructure - OCI",
+    "Proxmox VE, "
   ],
 
   a_iac: [
@@ -163,7 +155,10 @@ export const RESUME_DATA = {
     "Hermes Agent",
     "Ollama",
     "LM-Studio",
-    "Fine-Tuning"
+    "Fine-Tuning",
+    "LangChain",
+    "LangGraph",
+    "n8n"
   ],
 
   projects: [
@@ -209,6 +204,20 @@ export const RESUME_DATA = {
       link: {
         label: "Toolkit",
         href: "https://toolkit.onl9.club/",
+      },
+    },
+    {
+      title: "Job Apply Pipeline",
+      techStack: [
+        "LangChain",
+        "Nvidia Build",
+        "Hermes Agent",
+        "n8n",
+      ],
+      description: "An AI Agent which helps in creating tailored ATS friendly CVs and CLs for the job links I share. It also helps in filling the form on the job board, and the workflow ends aftr filling the application form. The application is submitted only after my review.",
+      link: {
+        label: "job-apply-pipeline",
+        href: "https://github.com/Maghav/automated-job-apply-pipeline",
       },
     },
     {
