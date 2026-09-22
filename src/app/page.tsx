@@ -4,9 +4,10 @@ import { Badge } from "@/components/ui/badge";
 import { CommandMenu } from "@/components/command-menu";
 import { Metadata } from "next";
 import { Section } from "@/components/ui/section";
-import { GlobeIcon } from "lucide-react";
+import { GlobeIcon, ExternalLink } from "lucide-react";
 import { RESUME_DATA } from "@/data/resume-data";
 import { ProjectCard } from "@/components/project-card";
+import { ExperienceCard } from "@/components/experience-card";
 import { AttachmentCard } from "@/components/attachment-card";
 import { ContactButtons } from "@/components/contact-buttons";
 
@@ -25,18 +26,33 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 
 type BadgeVariant = "default" | "secondary" | "green" | "red" | "outline" | "destructive";
 
-function SkillGroup({ title, items, variant = "default" }: {
+function SkillCard({
+  title,
+  items,
+  variant = "default",
+  color = "bg-neo-yellow",
+}: {
   title: string;
   items: readonly string[];
   variant?: BadgeVariant;
+  color?: string;
 }) {
   return (
-    <div className="space-y-2">
-      <h3 className="text-sm font-extrabold uppercase tracking-wide text-foreground border-b-2 border-neo-black pb-1">{title}</h3>
-      <div className="flex flex-wrap gap-1">
-        {items.map((item) => (
-          <Badge key={item} variant={variant}>{item}</Badge>
-        ))}
+    <div className="border-2 border-neo-black bg-white shadow-neo-sm p-3 flex flex-col justify-between hover:shadow-neo transition-all duration-150">
+      <div>
+        <div className="flex items-center gap-2 border-b-2 border-neo-black pb-1.5 mb-2">
+          <span className={`inline-block w-2.5 h-2.5 border border-neo-black ${color} shrink-0`} />
+          <h3 className="text-xs font-mono font-extrabold uppercase tracking-wide text-foreground">
+            {title}
+          </h3>
+        </div>
+        <div className="flex flex-wrap gap-1.5">
+          {items.map((item) => (
+            <Badge key={item} variant={variant} className="text-[11px] py-0.5 px-1.5 font-mono">
+              {item}
+            </Badge>
+          ))}
+        </div>
       </div>
     </div>
   );
@@ -99,39 +115,64 @@ export default function Page() {
         {/* Work Experience */}
         <Section>
           <SectionHeading>Work Experience</SectionHeading>
-          {RESUME_DATA.work.map((work) => (
-            <Card key={work.company} className="overflow-hidden">
-              <div className="bg-neo-blue border-b-2 border-neo-black px-4 pt-3 pb-2">
-                <div className="flex items-center justify-between gap-x-4">
-                  <h3 className="font-extrabold text-base leading-tight">
-                    <a className="hover:underline" href={work.link}>
-                      {work.company}
-                    </a>
-                  </h3>
-                  <div className="text-sm font-bold text-neo-black shrink-0 font-mono whitespace-nowrap">
-                    {work.start} – {work.end}
+          <div className="space-y-4">
+            {RESUME_DATA.work.map((work) => (
+              <Card key={work.company} className="overflow-hidden border-2 border-neo-black shadow-neo bg-white">
+                <div className="bg-neo-blue border-b-2 border-neo-black px-4 py-3">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <h3 className="font-extrabold text-base md:text-lg leading-tight">
+                      <a
+                        className="hover:underline inline-flex items-center gap-1.5 text-neo-black"
+                        href={work.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {work.company}
+                        <ExternalLink className="h-3.5 w-3.5 opacity-80" />
+                      </a>
+                    </h3>
+                    <div className="text-xs font-bold text-neo-black shrink-0 font-mono bg-white px-2 py-0.5 border-2 border-neo-black shadow-neo-sm whitespace-nowrap">
+                      {work.start} – {work.end}
+                    </div>
                   </div>
+                  {work.badges.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {work.badges.map((badge) => (
+                        <Badge variant="default" className="text-[10px] py-0 border-neo-black" key={badge}>
+                          {badge}
+                        </Badge>
+                      ))}
+                    </div>
+                  )}
                 </div>
-                {work.badges.length > 0 && (
-                  <div className="flex flex-wrap gap-1 mt-1.5">
-                    {work.badges.map((badge) => (
-                      <Badge variant="default" className="text-[10px] py-0" key={badge}>
-                        {badge}
-                      </Badge>
-                    ))}
+                <div className="px-4 py-3.5 space-y-3">
+                  <div className="flex items-center gap-2">
+                    <span className="h-2 w-2 bg-neo-black shrink-0" />
+                    <p className="font-mono text-sm md:text-base font-extrabold text-foreground">
+                      {work.title}
+                    </p>
                   </div>
-                )}
-              </div>
-              <div className="px-4 py-3 space-y-2">
-                <p className="font-mono text-sm font-extrabold text-foreground">
-                  {work.title}
-                </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {work.description}
-                </p>
-              </div>
-            </Card>
-          ))}
+                  {"points" in work && Array.isArray(work.points) ? (
+                    <ul className="space-y-2 list-none">
+                      {work.points.map((point, index) => (
+                        <li
+                          key={index}
+                          className="flex items-start text-xs md:text-sm text-foreground/85 leading-relaxed font-mono"
+                        >
+                          <span className="inline-block h-1.5 w-1.5 bg-neo-black shrink-0 mt-2 mr-2.5" />
+                          <span>{point}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : (
+                    <p className="text-xs md:text-sm text-muted-foreground leading-relaxed font-mono">
+                      {work.description}
+                    </p>
+                  )}
+                </div>
+              </Card>
+            ))}
+          </div>
         </Section>
 
         {/* Education */}
@@ -161,15 +202,55 @@ export default function Page() {
         {/* Skills */}
         <Section>
           <SectionHeading>Skills & Technologies</SectionHeading>
-          <div className="space-y-4">
-            <SkillGroup title="Infrastructure, OS & Cloud"    items={RESUME_DATA.infraOSCloud}          variant="green"     />
-            <SkillGroup title="Automation & IaC"              items={RESUME_DATA.a_iac}                 variant="red"       />
-            <SkillGroup title="CI/CD"                         items={RESUME_DATA.cicd}                  variant="secondary" />
-            <SkillGroup title="Containers & Orchestration"    items={RESUME_DATA.container_orchestration} variant="green"   />
-            <SkillGroup title="Monitoring & Networking"       items={RESUME_DATA.monitoring_networking} variant="red"       />
-            <SkillGroup title="Security"                      items={RESUME_DATA.security}              variant="secondary" />
-            <SkillGroup title="AI"                            items={RESUME_DATA.ai}                    variant="green"     />
-            <SkillGroup title="Other"                         items={RESUME_DATA.others}                variant="red"       />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
+            <SkillCard
+              title="Infrastructure, OS & Cloud"
+              items={RESUME_DATA.infraOSCloud}
+              variant="green"
+              color="bg-neo-green"
+            />
+            <SkillCard
+              title="Automation & IaC"
+              items={RESUME_DATA.a_iac}
+              variant="red"
+              color="bg-neo-coral"
+            />
+            <SkillCard
+              title="CI/CD"
+              items={RESUME_DATA.cicd}
+              variant="secondary"
+              color="bg-neo-blue"
+            />
+            <SkillCard
+              title="Containers & Orchestration"
+              items={RESUME_DATA.container_orchestration}
+              variant="green"
+              color="bg-neo-green"
+            />
+            <SkillCard
+              title="Monitoring & Networking"
+              items={RESUME_DATA.monitoring_networking}
+              variant="red"
+              color="bg-neo-coral"
+            />
+            <SkillCard
+              title="Security"
+              items={RESUME_DATA.security}
+              variant="secondary"
+              color="bg-neo-blue"
+            />
+            <SkillCard
+              title="AI & Agentic Systems"
+              items={RESUME_DATA.ai}
+              variant="green"
+              color="bg-neo-green"
+            />
+            <SkillCard
+              title="Languages & Platforms"
+              items={RESUME_DATA.others}
+              variant="default"
+              color="bg-neo-yellow"
+            />
           </div>
         </Section>
 
@@ -192,7 +273,7 @@ export default function Page() {
           <SectionHeading>Learning/Troubleshooting Experience</SectionHeading>
           <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
             {RESUME_DATA.experience.map((experience) => (
-              <ProjectCard
+              <ExperienceCard
                 key={experience.title}
                 title={experience.title}
                 description={experience.description}
@@ -206,14 +287,16 @@ export default function Page() {
         {/* Projects */}
         <Section>
           <SectionHeading>Projects</SectionHeading>
-          <div className="grid grid-cols-1 gap-3 print:grid-cols-3 print:gap-2 md:grid-cols-2 lg:grid-cols-3">
+          <div className="space-y-4">
             {RESUME_DATA.projects.map((project) => (
               <ProjectCard
                 key={project.title}
                 title={project.title}
-                description={project.description}
-                tags={project.techStack}
-                link={"link" in project ? project.link.href : undefined}
+                liveUrl={project.liveUrl}
+                githubUrl={project.githubUrl}
+                points={project.points}
+                skillsLearned={project.skillsLearned}
+                status={"status" in project ? project.status : undefined}
               />
             ))}
           </div>
