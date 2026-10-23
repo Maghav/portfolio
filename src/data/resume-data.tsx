@@ -7,7 +7,7 @@ export const RESUME_DATA = {
   location: "Auckland, New Zealand",
   locationLink: "https://www.google.com/maps/place/Auckland",
   about: "A Graduate in Artificial Intelligence, Experienced in Systems, DevOps, and Technical Support.",
-  summary: "I'm gaining experience in DevOps, by working with CI/CD, Linux, Docker, K8s, Ansible, Terraform on AWS, Azure and GCP by working on hands on projects. On the way to be a Site Reliability Engineer oneday.",
+  summary: "I'm gaining experience in DevOps, by working with CI/CD, Linux, Docker, K8s, Ansible, Terraform on AWS, Azure and GCP by working on hands on projects. On the way to be a Site Reliability Engineer oneday. I hold over 5 years of professional experience, with upto 7 years of practical experience in IT. My first deployment journey",
   // avatarUrl: "https://lh3.googleusercontent.com/a/ACg8ocJp_Ah8HcaGgdRGnck3V4YxuANSJ6IBvZgnM1YjNnbgEmM=s83-c-mo",
   personalWebsiteUrl: "https://onl9.club",
   contact: {
@@ -54,13 +54,34 @@ export const RESUME_DATA = {
       start: "August 2025",
       end: "Present",
       points: [
-        "Spearheaded IT infrastructure relocation from Rodney to Onehunga office, configuring complete UniFi networking and HomeAssistant IoT automation.",
-        "Architected and maintained hybrid cloud deployments integrating on-premise bare-metal servers with AWS and Azure services.",
-        "Deployed and hardened production servers including NGINX reverse proxies, web application servers, and secure VPN access.",
+        "Spearheaded IT infrastructure relocation from Rodney to Onehunga office, configuring complete UniFi networking and HomeAssistant IoT automations.",
+        "Architected and maintained hybrid cloud deployments integrating on-premise bare-metal servers with Oracle Cloud and Proxmox.",
+        "Deployed and hardened production servers including NGINX reverse proxies, web application servers, and secure VPN access using Wireguard and OPNsense.",
         "Containerized applications using Docker to streamline deployments and significantly reduce service downtime.",
-        "Elevated infrastructure uptime, reliability, and security posture from ~50% to over 90% via proactive monitoring."
+        "Elevated infrastructure uptime, reliability, and security posture from ~50% to over 90% via proactive monitoring using Prometheus, Grafana, and Zabbix.",
       ],
-      description: "Spearheaded hybrid cloud infrastructure, UniFi networking, and server hardening, improving uptime from 50% to >90%.",
+      description: "Worked on Monitoring, Reliability of the servers, and devices, Virtualizing, Infrastructure Networking, IoT Automations, Cloud, IT Support, documentations, and website development using AI, OpenSource and propreitary tools including OPNsense, HomeAssistant, UniFi Controller, Prometheus, Grafana, Zabbix, Windows Server, Linux, FreeDOS, Oracle Cloud, Proxmox, Hyper-V, and various other tools according to modern integrations with AI agents",
+    },
+    {
+      company: "TechWRXS",
+      link: "https://www.techwrxs.com/",
+      badges: [" New Zealand - Remote", "DevOps & Cloud, IT Support and Infrastructure"],
+      title: "L3 Systems Engineer",
+      start: "September 2024",
+      end: "Present",
+      points: [
+        "Built a website and built a CI/CD pipeline on Jenkins for automating the deployment SDLC.",
+        "Doing migration of Jenkins pipelines to GitHub Actions.",
+        "Building an easy way for Kiwis to shop from all NZ shops at one place using Vibe Coding (AI), and Kiwi infrastructure.",
+        "Used Microsoft 365 initially for ease, but then migrated to Zoho. Now due to infrastructure on Premises, have decided to work on NextCloud and other Open Source tools for office productivity and other internal communications.",
+        "Opted for EmailCrane to avoid Email Hosting on premises.",
+        "Leveraged OPNsense for internal networking, and VPN Setup with Firewalls, and infrastructure monitoring using Zenarmor, and ntopng.",
+        "Using OracleCloud, AWS, and Azure for various kubernetes, and docker projects.",
+        "Deployed internal AI agents, and internal AI infrastructure using GPUs on Rent, for internal employee AI adoption.",
+        "Used Proxmox, Windows Server, Ubunutu, and SUSE, for managing the infrastructure on premises for virtualizations, and System Administration tasks.",
+        "Automated a lot of server deployment using Ansible, and NGINX for multi server deployments in a cloud when more load is needed."
+      ],
+      description: "Built automated Azure DevOps CI/CD pipelines for .NET and React applications in an agile cloud environment.",
     },
     {
       company: "Mitre10 MEGA",
@@ -91,6 +112,7 @@ export const RESUME_DATA = {
       ],
       description: "Built automated Azure DevOps CI/CD pipelines for .NET and React applications in an agile cloud environment.",
     },
+    
     // {
     //   company: "Woolworths New Zealand",
     //   link: "https://www.woolworths.co.nz",
@@ -104,6 +126,59 @@ export const RESUME_DATA = {
     //   ],
     //   description: "Student Part Time Job",
     // },
+     {
+      company: "Department of Education, Government of Delhi",
+      link: "https://www.cbse.nic.in/",
+      badges: ["New Delhi, India", "IT Support"],
+      title: "Graduate Support Analyst",
+      start: "September 2022",
+      end: "February 2023",
+      points: [
+        "Supported daily IT operations for staff and business systems, resolving user needs through friendly, clear and consistent service.",
+        "Maintained asset registers, operating procedures and business documentation to keep support work accurate, visible and repeatable.",
+        "Delivered friendly, clear communication and consistent service quality among the government employees, officials and ministers.",
+        "Ensured AV setup for the meetings, and provided laptops to the employees on my service desk.",
+        "Documented, and recorded every equipment, device provided to the employee for infrastructure budgeting."
+      ],
+      description: "Built automated Azure DevOps CI/CD pipelines for .NET and React applications in an agile cloud environment.",
+    },
+    {
+      company: "MyCaptain",
+      link: "https://www.mycaptain.com/",
+      badges: ["India - Remote", "IT Support"],
+      title: "Technical Support Analyst",
+      start: "September 2021",
+      end: "September 2022",
+      points: [
+        "Administered and supported the Microsoft 365 ecosystem, including Microsoft Outlook, Exchange Online, Microsoft Teams, SharePoint Online, Microsoft Entra ID (Azure Active Directory), and the Microsoft 365 Admin Center, providing technical support to students, mentees, and internal users.",
+        "Delivered real-time Level 1/Level 2 user support through phone, WhatsApp, and email, troubleshooting issues related to Microsoft Teams meeting access, authentication, Microsoft 365 accounts, Outlook/email connectivity, permissions, and access to workshop resources.",
+        "Managed Microsoft 365 user accounts, licenses, groups, roles, and access permissions through the Microsoft 365 Admin Center and Microsoft Entra Admin Center, ensuring users had appropriate access to Exchange Online, Teams, SharePoint, and other licensed Microsoft 365 services.",
+        "Implemented and maintained automated onboarding/offboarding and license-management workflows, reducing repetitive administrative tasks and ensuring Microsoft 365 licenses and organizational resources were provisioned and revoked according to user status.",
+        "Managed the user identity lifecycle, including onboarding, offboarding, account provisioning/deprovisioning, license assignment/removal, group membership, and access management using Microsoft Entra ID (Azure AD) and Microsoft 365 administrative tools.",
+        "Supported identity and access management (IAM) activities within Microsoft Entra ID, including user and group administration, authentication troubleshooting, role-based access, and permission management across Microsoft 365 services.",
+        "Administered and maintained internal SharePoint Online sites, document libraries, permissions, and information-management structures used by employees and workshop participants for centralized communication, documentation, and resource sharing.",
+        "Supported Exchange Online and Outlook environments by assisting users with mailbox access, email configuration, account-related issues, and Microsoft 365 email services.",
+        "Performed routine Microsoft 365 administration and service management through the Microsoft 365 Admin Center, Exchange Admin Center, Entra Admin Center, SharePoint Admin Center, and Teams Admin Center.",
+
+      ],
+      description: "Helped an edtech startup to build their customer base during new covid lockdown online learnings.",
+    },
+
+    {
+      company: "Shoutcoder",
+      link: "https://www.shoutcoder.com.com/",
+      badges: ["India - Remote", "IT Support"],
+      title: "IT Support Specialist",
+      start: "April 2020",
+      end: "September 2021",
+      points: [
+        "Provided live technical support to the users via Tawk.to platform",
+        "Resolved on time tickets on WHMCS platform.",
+        "Ensured 100% customer during outages.",
+        "Provided technical support for PHP based cPanel/WHM support, with integrations like LiteSpeed, MySQL phpmyadmin, Cloudflare for speed enhancements, uptime reliability and domain DNS mangement as well Email hosting records. "
+      ],
+      description: "PHP based technical support provider for a web hosting company using cPanel/DirectAdmin Web Hosting Control panels.",
+    },
   ],
 
   others: [
@@ -161,6 +236,7 @@ export const RESUME_DATA = {
     "Zabbix",
     "Elastic Stack - ELK",
     "Tailscale",
+    "ntopng",
     "OPNsense",
     "UniFi",
     "ManageEngine MDM"
@@ -171,7 +247,7 @@ export const RESUME_DATA = {
     "SSL/TLS",
     "Reverse Proxy",
     "Bastion Host - OCI Bastion",
-    "VPN configuration"
+    "VPN configuration - WireGuard"
   ],
 
   ai: [
@@ -218,8 +294,8 @@ export const RESUME_DATA = {
     },
     {
       title: "Job Apply Pipeline",
-      liveUrl: "https://github.com/Maghav/automated-job-apply-pipeline",
-      githubUrl: "https://github.com/Maghav/automated-job-apply-pipeline",
+      liveUrl: "https://github.com/Maghav/cv_cl_maker",
+      githubUrl: "https://github.com/Maghav/cv_cl_maker",
       points: [
         "Engineered an autonomous AI agent system to analyze job descriptions and generate customized ATS-friendly CVs and cover letters.",
         "Orchestrated multi-step workflow automation using n8n and LangChain integrated with Hermes Agent and Nvidia Build.",
@@ -242,14 +318,14 @@ export const RESUME_DATA = {
       description: "AI agent workflow generating tailored ATS-friendly CVs/CLs and automating application form submissions.",
       link: {
         label: "job-apply-pipeline",
-        href: "https://github.com/Maghav/automated-job-apply-pipeline",
+        href: "https://github.com/Maghav/cv_cl_maker",
       },
     },
     {
-      title: "ONL9 Toolkit 9",
+      title: "ONL9 Toolkit",
       status: "In Progress",
       liveUrl: "https://toolkit.onl9.club/",
-      githubUrl: "https://github.com/Maghav",
+      githubUrl: "https://github.com/Maghav/toolkit",
       points: [
         "Developing a centralized suite of web-based utilities and developer tools for daily workflow optimization.",
         "Designed responsive, modular user interfaces with TailwindCSS and Next.js server/client components.",
@@ -278,7 +354,7 @@ export const RESUME_DATA = {
     {
       title: "Learning Physics",
       liveUrl: "https://learningphysics.in/",
-      githubUrl: "https://github.com/Maghav",
+      githubUrl: "https://github.com/Maghav/learningphysics",
       points: [
         "Created an educational physics learning portal featuring curated study curriculum and interactive materials.",
         "Configured web hosting, domain DNS records, and SSL/TLS certificate renewal via cPanel.",
