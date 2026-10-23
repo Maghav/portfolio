@@ -2,6 +2,7 @@
   "name": "web-cv",
   "version": "0.1.0",
   "private": true,
+  "engines": { "node": "24.x" },
   "scripts": {
     "dev": "next dev -p 5000 -H 0.0.0.0",
     "build": "next build",
